@@ -1,16 +1,24 @@
-# Balaji Automobiles CRM
+# Balaji Automobiles CRM V2 — Shared Cloud Version
 
-A lightweight showroom CRM for Balaji Automobiles, Susner.
+This version uses Supabase so enquiries can be shared between the showroom PC and phones.
 
-## Run locally
-Open `index.html` in a browser.
+## Setup
+1. Create a Supabase project.
+2. Open SQL Editor and run `supabase.sql`.
+3. Create your first account in the app after putting the Supabase URL/key in `config.js`.
+4. In Supabase Table Editor -> profiles, change that first user's role from `staff` to `admin`.
+5. Put the values in `config.js`:
+   - SUPABASE_URL
+   - SUPABASE_ANON_KEY
+6. Upload all files to the GitHub repository root.
+7. GitHub Pages will publish the app.
 
-## Demo logins
-- Admin: `admin` / `admin123`
-- Staff: `staff` / `staff123`
+## Files
+- index.html
+- app.js
+- style.css
+- config.js
+- supabase.sql
 
-## GitHub Pages
-Upload all files to a GitHub repository. In GitHub:
-Settings → Pages → Deploy from a branch → select `main` and `/ (root)` → Save.
-
-The app stores enquiry data in the browser using localStorage. This first version does not use a cloud database, so data is device/browser-specific.
+## Important
+The anon key is intended for browser use; security comes from Supabase Row Level Security policies. Never put a Supabase service-role/secret key in this project.
